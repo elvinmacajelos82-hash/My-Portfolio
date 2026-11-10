@@ -1,0 +1,422 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 60px;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+
+
+
+ /* Ai rani Futuristic grid */
+    background-image:
+        linear-gradient(
+            rgba(56, 189, 248, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56, 189, 248, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    color: #F8FAFC;
+    padding: 60px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* Ai rani Slowly moving blue glow */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(56, 189, 248, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(39, 99, 133, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(56, 189, 248, 0.06),
+            transparent 40%
+        );
+
+    animation: blueGlow 12s ease-in-out infinite alternate;
+}
+
+/* Moving blue light */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(56, 189, 248, 0.07) 48%,
+        rgba(56, 189, 248, 0.14) 50%,
+        rgba(56, 189, 248, 0.07) 52%,
+        transparent 65%
+    );
+
+    background-size: 250% 250%;
+    animation: movingLight 15s linear infinite;
+}
+
+/* Glow animation */
+@keyframes blueGlow {
+    0% {
+        opacity: 0.5;
+        transform: translate(-2%, -1%) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(2%, 1%) scale(1.08);
+    }
+}
+
+/* Sweeping light animation */
+@keyframes movingLight {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: -100% 50%;
+    }
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
+
+
+
+}
+
+h1{
+    color:#F8FAFC;
+}
+
+
+
+
+
+/* Navigation bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    margin: -60px -60px 30px;
+    background-color: #0F172A;
+    border-bottom: 1px solid #26364F;
+    font-size: 16px;
+}
+
+
+
+
+.logo {
+    color: rgb(56, 189, 248);
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+
+
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.navbar a {
+    color: #F8FAFC;
+    text-decoration: none;
+}
+
+
+
+
+.navbar a:hover {
+    color: rgb(56, 189, 248);
+}
+
+
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+
+
+
+/* Each section occupies the screen below the navbar */
+.page-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
+    padding: 30px 0;
+}
+
+
+
+/* Home section */
+.name {
+    text-align: center;
+}
+
+
+
+
+#image {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    border: 2px solid #26364F;
+}
+
+
+
+
+/* Section headings */
+#about,
+#skills,
+#education,
+#services,
+#contact {
+    color:#F8FAFC;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p{
+    color:#F8FAFC;
+}
+
+
+/* About */
+.description {
+    width: 100%;
+     border: 1px solid rgb(39, 99, 133);
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #1E293B;
+    text-align: center;
+}
+
+
+
+
+/* Skills */
+.parentskills {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+
+
+.skill1,
+.skill2,
+.skill3,
+.skill4,
+.skill5,
+.skill6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     border: 1px solid rgb(39, 99, 133);
+    border-radius: 30px;
+    background-color: #1E293B;
+    padding: 30px;
+    width: 180px;
+    min-height: 140px;
+    font-size: 16px;
+    text-align: center;
+    color:#F8FAFC;
+}
+
+
+
+
+/* Education */
+.bsit {
+    width: 70%;
+    border: 1px solid rgb(39, 99, 133);
+    border-radius: 30px;
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #1E293B;
+    text-align: left;
+}
+
+
+
+
+#academic,
+#course {
+    color: rgb(56, 189, 248);
+}
+
+
+
+
+/* Services */
+.parentservices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+
+
+.services1,
+.services2,
+.service3,
+.services4 {
+    width: 365px;
+    min-height: 265px;
+    padding: 30px;
+    border: 1px solid rgb(39, 99, 133);
+    border-radius: 40px;
+    background-color: #1E293B;
+    font-size: 17px;
+}
+
+hr {
+    margin-left: -60px;
+    margin-right: -60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none;
+    border-top: 1px solid #26364F;
+}
+
+
+
+#pc,
+#pcrepair,
+#virus,
+#installation {
+    color: rgb(56, 189, 248);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+
+/* Contact */
+.sectioncontact {
+    width: 100%;
+    border: 1px solid rgb(39, 99, 133);
+    border-radius: 50px;
+    padding: 30px;
+    background-color: #1E293B;
+    text-align: center;
+}
+
+
+
+
+.contactdescription {
+    margin-bottom: 10px;
+}
+
+#work{
+     color: rgb(56, 189, 248);
+}
+
+
+
+
+/* AI rani deri na part for Smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .navbar {
+        margin: 0 -20px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .page-section {
+        min-height: calc(100vh - 120px);
+    }
+
+    #image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .description,
+    .sectioncontact,
+    .bsit {
+        padding: 20px;
+    }
+
+    .services1,
+    .services2,
+    .service3,
+    .services4 {
+        width: 100%;
+    }
+}
